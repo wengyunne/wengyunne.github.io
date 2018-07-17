@@ -1,60 +1,99 @@
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Flexbox 0 — starting code</title>
-    <style>
-      html {
-        font-family: sans-serif;
-      }
-      body {
-        margin: 0;
-      }
-      header {
-        background: purple;
-        height: 100px;
-      }
-      h1 {
-        text-align: center;
-        color: white;
-        line-height: 100px;
-        margin: 0;
-      }
-      article {
-        padding: 10px;
-        margin: 10px;
-        background: aqua;
-      }
-      /* Add your flexbox CSS below here */
-      
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Sample flexbox example</h1>
-    </header>
+<head>
+  <meta charset="utf-8">
+  <title>Tabbed info box</title>
+  <style>
+  header{width: 100%;height: 30px;background-color: #333333;    width: 950px;
+    margin: 0 auto;}
+  header{width: 100%;height: 30px;background-color: #333333;width:960px;}
+.container{ height:950px;overflow:hidden;}
+.middle{width: 100%; background-color: #fff;float:left;}
+.middle{width: 100%; background-color: #fff;float:left;}
 
-    <section>
-      <article>
-        <h2>First article</h2>
+footer{    width: 950px;
+    margin: 0 auto; height: 30px;background-color: #666666;text-align:center;}
+.container{display: flex;}
+.pagecontent{display: flex;flex: 1 222px;height:175px;}
+.logo h1{    
 
-        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
-      </article>
+line-height: 30px;
+    font-size: 20px;
+	padding:0;
+	margin:0;
+    padding-left: 5%; color: white;}
+	.mainbanner{
+	height:300px;
+   }
+	li{
+	list-style-type:none;}
+	.logo{
+	float:left;}
+	.links{float:right;}
+	.links a{text-decoration:underline; padding-left:10px;    font-size: 10px;
+    line-height: 29px;
+    color: white;}
+	
+	.mainbanner{
+	background-color:#66bb33;;    width: 950px;
+    margin: 0 auto;}
+	.content{display:flex;width:950px;height:580px;flex-wrap:wrap;}
+	.maincontent{height:650px;display:flex;overflow:hidden; margin:0 auto;}
+	ul{ margin:  0;}
+	ul,li{margin:0px;padding:0px;border:none;list-style;none;}
+	 ul li{width:100%;}
+	 li{margin:0px; padding:0px; overflow:hidden;}
+	 .pagecontent{
+	 align-items:stretch;    margin: 1px;
+	 }
+.maincontent:after{
+display:block;
+clear:both;
+}  
+.maincontent{
+width:950px;
 
-      <article>
-        <h2>Second article</h2>
+}
+footer h4{    font-size: 10px;
+    line-height: 29px;
+    color: white;}
+</style>
+</head>
+<body>
+<!-- 
+设计稿描述：
 
-        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
-      </article>
+设计稿分为头部，中间的Banner，主导航，内容区域，底部
+头部区域为100%宽的一个深色背景，头部中间有一块960px的定宽居中区域，里面包括了左边
+的Logo和右上角导航Banner为100%宽的区块，中间右下方有banner轮显的当前图片数字的示例
+，其中正在显示的图片对应的数字有特殊样式（注意不需要实现轮显banner的业务逻辑，只
+是按照设计稿做静态样式）主导航区域，有一个100%宽的灰色线条，线条之上，在中间960px
+区域是导航菜单，当前正在浏览页对应的菜单有特殊样式主要内容区域，宽度为960px，里面
+每个内容都有至少80px的padding，每一个内容的宽度均为自适应，可以使用flex布局 -->
 
-      <article>
-        <h2>Third article</h2>
+<header>
+<h4></h4>
+<div class="logo"><h1>logo</h1></div>
+<div class="links"><a>Gitub</a><a>Register</a><a>Login</a></div>
+</header>
 
-        <p>Tacos actually microdosing, pour-over semiotics banjo chicharrones retro fanny pack portland everyday carry vinyl typewriter. Tacos PBR&B pork belly, everyday carry ennui pickled sriracha normcore hashtag polaroid single-origin coffee cold-pressed. PBR&B tattooed trust fund twee, leggings salvia iPhone photo booth health goth gastropub hammock.</p>
+<div class="container">
+<div class="middle">
+<div class="mainbanner"><ul><li>1</li><li>2</li><li>3</li><li>4</li></ul></div>
+<div class="maincontent"><ul class="middle">
+<li><h4>HOME</h4><div class="content"><div class="pagecontent">This is Content 1</div><div class="pagecontent">This is Content 2</div><div class="pagecontent">This is Content 3</div><div class="pagecontent">This is Content 4</div><div class="pagecontent">This is Content 5</div><div class="pagecontent">This is Content 1</div><div class="pagecontent">This is Content 2</div><div class="pagecontent">This is Content 3</div><div class="pagecontent">This is Content 4</div><div class="pagecontent">This is Content 5</div></div></li>
+<li><h4>PROFILE</h4></li>
+<li><h4>ABOUT</h4></li></ul></div>
+</h4></div>
+</div> 
+</div>
 
-        <p>Cray food truck brunch, XOXO +1 keffiyeh pickled chambray waistcoat ennui. Organic small batch paleo 8-bit. Intelligentsia umami wayfarers pickled, asymmetrical kombucha letterpress kitsch leggings cold-pressed squid chartreuse put a bird on it. Listicle pickled man bun cornhole heirloom art party.</p>
-      </article>
-    </section>
-  </body>
+<footer><h4>2018 ife.baidu.com</h4></footer>
+
+
+
+<script>
+</script>
+  
+</body>
 </html>
