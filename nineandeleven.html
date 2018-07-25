@@ -1,0 +1,359 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ 元素/标签选择器 ~~ */
+ul, ol, dl { /* 由于浏览器之间的差异，最佳做法是在列表中将填充和边距都设置为零。为了保持一致，您可以在此处指定需要的数值，也可以在列表所包含的列表项（LI、DT 和 DD）中指定需要的数值。请注意，除非编写一个更为具体的选择器，否则您在此处进行的设置将会层叠到 .nav 列表。 */
+	padding: 0;
+	margin: 0;
+	list-style:none
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* 删除上边距可以解决边距会超出其包含的 div 的问题。剩余的下边距可以使 div 与后面的任何元素保持一定距离。 */
+	padding-right: 15px;
+	padding-left: 15px; /* 向 div 内的元素侧边（而不是 div 自身）添加填充可避免使用任何方框模型数学。此外，也可将具有侧边填充的嵌套 div 用作替代方法。 */
+}
+a img { /* 此选择器将删除某些浏览器中显示在图像周围的默认蓝色边框（当该图像包含在链接中时） */
+	border: none;
+}
+
+/* ~~ 站点链接的样式必须保持此顺序，包括用于创建悬停效果的选择器组在内。 ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* 除非将链接设置成极为独特的外观样式，否则最好提供下划线，以便可从视觉上快速识别 */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* 此组选择器将为键盘导航者提供与鼠标使用者相同的悬停体验。 */
+	text-decoration: none;
+}
+
+/* ~~ 此容器包含所有其它 div，并依百分比设定其宽度 ~~ */
+.container {
+	}
+
+/* ~~ 标题未指定宽度。它将扩展到布局的完整宽度。标题包含一个图像占位符，该占位符应替换为您自己的链接徽标 ~~ */
+.header {
+	    background-image: url(../photo/images/header-image.gif);
+		    height: 1000px;
+			    color: white;
+				background-size:100% 100%;
+}
+
+/* ~~ 这是布局信息。 ~~ 
+
+1) 填充只会放置于 div 的顶部和/或底部。此 div 中的元素侧边会有填充。这样，您可以避免使用任何“方框模型数学”。请注意，如果向 div 自身添加任何侧边填充或边框，这些侧边填充或边框将与您定义的宽度相加，得出 *总计* 宽度。您也可以选择删除 div 中的元素的填充，并在该元素中另外放置一个没有任何宽度但具有设计所需填充的 div。
+
+*/
+.content {
+	padding: 10px 0;
+}
+
+/* ~~ 此分组的选择器为 .content 区域中的列表提供了空间 ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* 此填充反映上述标题和段落规则中的右填充。填充放置于下方可用于间隔列表中其它元素，置于左侧可用于创建缩进。您可以根据需要进行调整。 */
+}
+
+/* ~~ 脚注 ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+}
+
+/* ~~ 其它浮动/清除类 ~~ */
+.fltrt {  /* 此类可用于在页面中使元素向右浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* 此类可用于在页面中使元素向左浮动。浮动元素必须位于其在页面上的相邻元素之前。 */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* 如果从 #container 中删除或移出了 #footer，则可以将此类放置在 <br /> 或空 div 中，作为 #container 内最后一个浮动 div 之后的最终元素 */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+
+    .middle{	
+	width: 80%;
+	max-width: 1600px;/* 可能需要最大宽度，以防止此布局在大型显示器上过宽。这将使行长度更便于阅读。IE6 不遵循此声明。 */
+	min-width: 1260px;/* 可能需要最小宽度，以防止此布局过窄。这将使侧面列中的行长度更便于阅读。IE6 不遵循此声明。 */
+	
+	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐。如果将 .container 宽度设置为 100%，则不需要此设置。 */
+`	height: 1000px;
+	
+	}
+	.left{float:left;}
+	.header-h1{    
+	padding-top: 200px;
+    text-align: center;
+    font: 62px arial,sans-serif;
+	font-weight:lighter;}
+	.header h2{text-align: center;
+    font: 20px arial,sans-serif;
+	font-weight:lighter;
+	 margin: 0 auto;
+    width: 800px;
+    margin-bottom: 100px;}
+	.headerbox {
+    border: 1px solid #555;
+	width: 970px;
+    margin: 0 auto;
+}
+.headerbox h1{
+text-align: center;
+    font-weight: lighter;
+	font-family:sans-serif;
+	padding-top: 50px;
+	}
+	.header h2{    margin: 0 auto;
+    width: 800px;
+    margin-bottom: 100px;}
+.headerbox h3{    text-align: center;}
+   
+	.headerbox li{    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid #555;
+    float: left;
+	 margin-left: 50px;
+    margin-top: 50px;}
+	.headerbox ul{height:150px;}
+	#headerbox-li{
+	width: 125px;
+    color: #000;
+    background-color: white;}
+	.content{
+	text-align: center;
+    margin-top: 80px;
+    font: 14px;
+    font: 14px arial,sans-serif;
+    font-weight: bolder;
+	    height: 690px;}
+	.content h1{    width: 700px;
+    margin: 0 auto;}
+	.textalign{text-align: left;}
+	.content ul{height:485px;    margin-top: 50px;}
+
+	.content-s-box{padding: 30px;margin-left: 100px;}
+	.content-s-box h2{padding-left:50px;}
+	.content-s-box h4{padding-left: 50px;width: 360px;color: #c3c3c3;}
+	.contenttwo{
+	height:800px;    
+	position: relative;
+	background-image:url(../photo/images/前端学院设计图_19.png);}
+	.content-one-left{ 
+	float: left;
+    width: 450px;
+    margin: 150px;} 
+	.content-one-right{float:left;    position: absolute;
+    right: 0px;
+    top: 135px;}
+	.contentfour h1{    text-align: center;
+    font: 42px arial,sans-serif;}
+	.contentfour{height:380px;padding:100px;border: 1px solid #555;}
+	.c-f-s-box{width: 250px;    padding: 45px;}
+	.c-f-s-box img{    margin: 0 auto;
+    
+    line-height: 34px;
+    height: 34px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;}
+	.contentfourbox{height: 400px;padding-left:10%;}
+	.contentfive{height:1000px;}
+	<!-- 代码风格符合某种编码规范
+尽可能按照设计稿的尺寸进行实现
+设计稿中的图片或文字素材在实现时可以不一致
+充分应用上之前学习到的各种布局方式，尽可能几种方式都运用尝试一次，比较各种布局的适用场景
+设计稿中下方导师介绍图片，左上角灰色底表示，鼠标hover到图片上时的效果变化。
+不需要考虑兼容IE浏览器 -->
+
+</style></head>
+
+<body>
+
+<div class="container">
+  <div class="header">
+ 	<div class="middle">
+    <h1 class="header-h1">Hello World</h1>
+    <h2>China is speeding up strategic plan, standards, traffic rules, laws and regulations on accident-incurred liabilities for its smart car industry, Economic Information Daily reported Thursday.</h2>
+    <div class="headerbox">
+    <h1>Create Your Account</h1>
+    <h3>It is absolutely free</h3>
+	<ul><li>denis@getcraftwork.com</li><li>Create your password</li><li id="headerbox-li">Sign Up</li></ul>
+    </div>
+    </div>
+    <!-- end .header --></div>
+ 
+  <div class="content">
+    <div class="middle">
+    <h3>Boatloads of Awesome</h3>
+    <h1>Ready-made, customizable, HTML landing page sections</h1>
+
+	<ul>
+    <li class="content-s-box left">
+    <img class="left" src="../photo/images/前端学院设计图_05.gif" />
+    <h2 class="textalign">Mobile First</h2>
+	<h4 class="textalign">All modulz are built mobile-first for maximum device compatibility.</h4>
+    </li>
+	<li class="content-s-box left">
+    <img class="left"  src="../photo/images/前端学院设计图_05.gif" />
+    <h2 class="textalign">Accessibility</h2>
+	<h4 class="textalign">Support for IE8, mobile and tablet devices, screenreaders and color blind.</h4>
+    </li>
+	<li class="content-s-box left">
+    <img class="left"  src="../photo/images/前端学院设计图_05.gif" />
+    <h2 class="textalign">Fluid Typography</h2>
+	<h4 class="textalign">On different screen sizes, fonts automagically scale with the viewport.</h4>
+    </li>
+	<li class="content-s-box left">
+    <img class="left"  src="../photo/images/前端学院设计图_05.gif" />
+    <h2 class="textalign">Customization</h2>
+	<h4 class="textalign">Make any design your own using the Style Editor. Personalize fonts, colors, and layouts to create the custom look you want.</h4>
+    </li>
+    </ul>
+    <!-- end .content --></div>
+	</div>
+	<div class="contenttwo">
+	<div class="middle">
+	<div class="content-one-left">
+	<h1>Supportive policies for China's smart car</h1>
+	<h6>China will come up with its own smart car standards, traffic rules, laws and regulations relating to safety, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.</h6>
+	<ul><li>Check out Features</li><li>Try product for Free</li></ul>
+	</div>
+	<div class="content-one-right">
+	<img src="../photo/images/前端学院设计图_021.png" />
+	</div>
+	</div>
+	 <!-- end .contenttwo --></div>
+	
+	<div class="contentfour">
+	<div class="middle">
+	<h1>Try Our Awesome Products</h1>
+	<div class="contentfourbox">
+	<div class="c-f-s-box left">
+	<img src="../photo/images/前端学院设计图_28.gif" />
+	<h5>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said that China will also launch design guidance for smart cars, smart map architecture and standards for test grounds.</h5>
+	</div>
+	<div class="c-f-s-box left">
+	<img src="../photo/images/前端学院设计图_28.gif" />
+	<h5>Li said the smart car industry is able to enlarge the current car industry by 1 trillion yuan ($158.15 billion) and also able to boost fast development in 5G, internet of cars, big data, artificial intelligence and new-energy vehicles.</h5>
+	</div>
+	<div class="c-f-s-box left">
+	<img src="../photo/images/前端学院设计图_28.gif" />
+	<h5>Zhang Junyi, a partner with NIO Capital, said that the smart car is the trend for the car industry and China's auto sector will usher in a new key development stage with the improvement of infrastructure, technology, policies and laws.</h5>
+	</div>
+	</div>
+	</div>
+	<!-- end .contentfour --><div>
+	
+	<div class="contentfive">
+	<div class="middle">
+	<img class="left"  src="../photo/images/前端学院设计图_34.gif" />
+	<div class="c-f-box left">
+	<h1>Learn How to Improve Your Personal Business</h1>
+	<h3>Li Jun, a China Academy of Engineering academician and also director of the alliance's experts' committee, said that China will also launch design guidance for smart cars, smart map architecture and standards for test grounds.</h3>
+	</div>
+	<div class="c-f-box left">
+	<h1>Choose Between Two Beautifully Designed Color Schemes.</h1>
+	<h3>China will come up with its own smart car standards, traffic rules, laws and regulations relating to safety, according to the China Industry Innovation Alliance for the Intelligent and Connected Vehicles.</h3>
+	</div>
+	<img class="left" src="../photo/images/前端学院设计图_34.gif" />
+	</div>
+	<!-- end .contentfive --></div>
+	
+	<div class="contentsix">
+	<div class="middle">
+	<h1>Our Awesome Crew</h1>
+	<h3>Our unique online teaching style makes learning easy for everyone. Whether you are trying to land a new job, brush up on your skills.</h3>
+	<div class="c-s-box left ">
+	<img src="../photo/images/前端学院设计图_41.gif"　/>
+	</div>
+	<div class="c-s-box left ">
+	<img src="../photo/images/前端学院设计图_41.gif"　/>
+	</div>
+	<div class="c-s-box left ">
+	<img src="../photo/images/前端学院设计图_41.gif"　/>
+	</div>
+	<div class="c-s-box left ">
+	<img src="../photo/images/前端学院设计图_41.gif"　/>
+	</div>
+	</div>
+	<!-- end .contentsix --></div>
+	
+	<div class="contentseven">
+	<div class="middle">
+	<div class="c-seven-box left">
+	<h2></h2>
+	<div class="c-seven-es">E-mail<input type="email" id="myEmail"></div>
+	<div class="c-seven-es">Subject<input type="Subject" id="mySubject"></div>
+	<div class="c-seven-Message">Message<input type="email" id="myEmail"></div>
+	<button>SEND</button> 
+	</div>
+	<div class="c-seven-box left">
+	<h1>Contacts</h1>
+	<h3></h3>
+	<div class="c-seven-small "><img src="../photo/images/前端学院设计图_51.gif" /><h2>360 King Street<br>
+Feastrvale Trevose, PA 19057  </h2></div>
+	<div class="c-seven-small "><img src="../photo/images/前端学院设计图_51.gif" /><h2>(755) 564-84-12</h2></div>
+	<div class="c-seven-small "><img src="../photo/images/前端学院设计图_51.gif" /><h2>youname@mail.com</h2></div>
+	</div>
+    </div>
+	<!-- end .contentseven --></div>
+  <div class="footer">
+    <div class="footer-box">
+	<h1>Learn More</h1>
+	<h2>How it works?</h2>
+    <h2>Meeting tools</h2>
+    <h2>Live streaming</h2>
+    <h2>Contact method</h2>
+	</div>
+	<div class="footer-box">
+	<h1>About Us</h1>
+	<h2>About Us</h2>
+    <h2>Features</h2>
+    <h2>Privacy police</h2>
+    <h2>Terms & Conditions</h2>
+	</div>
+	<div class="footer-box">
+	<h1>Support</h1>
+	<h2>F.A.Q.</h2>
+    <h2>Contact us</h2>
+    <h2>Live chat</h2>
+    <h2>Phone call</h2>
+	</div>
+	<div class="footer-box">
+	<h1>Enjoy your Life</h1>
+	<h2>Great web UI kit for designers, freelancers or business.</h2>
+	<div class="footer-box-low">
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	<img src="../photo/images/前端学院设计图_60.gif" />
+	</div>
+	</div>
+    <!-- end .footer --></div>
+	
+  <!-- end .container --></div>
+</body>
+</html>
